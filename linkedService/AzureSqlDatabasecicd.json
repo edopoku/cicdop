@@ -1,0 +1,21 @@
+{
+	"name": "AzureSqlDatabasecicd",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"parameters": {
+			"DBName": {
+				"type": "string",
+				"defaultValue": "demo"
+			},
+			"DomainName": {
+				"type": "string",
+				"defaultValue": "test"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=@{linkedService().DomainName};Initial Catalog=@{linkedService().DBName}"
+		}
+	}
+}

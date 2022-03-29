@@ -1,6 +1,37 @@
 {
 	"name": "pipeline1",
 	"properties": {
-		"annotations": []
-	}
+		"activities": [
+			{
+				"name": "Wait-demo",
+				"description": "testing",
+				"type": "Wait",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 1
+				}
+			},
+			{
+				"name": "Wait2",
+				"description": "demo2",
+				"type": "Wait",
+				"dependsOn": [
+					{
+						"activity": "Wait-demo",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"waitTimeInSeconds": 4
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-03-10T22:49:56Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }
