@@ -4,7 +4,7 @@
 		"activities": [
 			{
 				"name": "Wait-demo",
-				"description": "testing",
+				"description": "hello world",
 				"type": "Wait",
 				"dependsOn": [],
 				"userProperties": [],
